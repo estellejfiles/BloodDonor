@@ -1,5 +1,6 @@
 {{>header}}
 
+<!-- container to store results in; uses result-container styles-->
 <div id="result-container">
     <h2>Results</h2>
 
@@ -15,6 +16,7 @@
     <p>{{ resultMessage }}</p>
 
 <!--    display ineligible reasons, if there are any    -->
+<!--    can act both as if statement and a loop    -->
     <ul>
     {{#ineligibleReasons}}
         <li>{{.}}</li>
@@ -22,11 +24,13 @@
     </ul>
 
 <!--    if there are no ineligible reasons then the user is eligible   -->
+<!--    "^" indicates this executes if NOT -->
     {{^ineligibleReasons}}
     <a href="https://www.mbc.org/donate-blood/donor-eligibility/">Continue checking eligibility</a>
     {{/ineligibleReasons}}
 </div>
 
+<!-- stores code that will have navigation styles -->
 <div id="navigation">
     <a href="/">Return to the home page</a>
 </div>
